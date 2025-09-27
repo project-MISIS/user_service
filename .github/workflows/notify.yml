@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: Notify deploy repo
-    run: |
-      curl -X POST \
-      -H "Accept: application/vnd.github.everest-preview+json" \
-      -H "Authorization: token ${{ secrets.MAIN_REPO_TOKEN }}" \
-      https://api.github.com/repos/project-misis/main-repo/dispatches \
-      -d '{"event_type":"trigger","client_payload":{"service":"${{ github.repository }}"}}'
+      run: |
+        curl -X POST \
+        -H "Accept: application/vnd.github.everest-preview+json" \
+        -H "Authorization: token ${{ secrets.MAIN_REPO_TOKEN }}" \
+        https://api.github.com/repos/project-misis/main-repo/dispatches \
+        -d '{"event_type":"trigger","client_payload":{"service":"${{ github.repository }}"}}'
 
