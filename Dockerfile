@@ -10,7 +10,7 @@ RUN go build ./main.go
 
 FROM gcr.io/distroless/static-debian12 AS release-stage
 WORKDIR /
-COPY --from=builder /app/user_service ./user_service
+COPY --from=builder /app/main ./main
 USER nonroot:nonroot  
-ENTRYPOINT ["/user_service"]
+ENTRYPOINT ["/main"]
 
